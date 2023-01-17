@@ -3,7 +3,6 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import xgboost as xgb
 import pickle
-from sklearn.metrics import mean_squared_error
 from mlxtend.plotting import plot_decision_regions
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report
@@ -82,11 +81,14 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 
-mse = mean_squared_error(y_test, y_pred)
-print('MSE(XGBRegressor): {:.3f}'.format(mse))
+print(y_pred)
 
 print(classification_report(y_test, y_pred))
 
+'''
 file_path = 'model/pedigree.pkl'
 
 pickle.dump(model, open(file_path, 'wb'))
+'''
+
+
